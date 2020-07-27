@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  left: 50vw;
+  top: 45vh;
+  transform: translateX(-50%) translateY(-50%);
+  width: 280px;
+  opacity: 0;
+  transition:1s;
+}
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  left: 50vw;
+  top: 45vh;
+  transform: translateX(-50%) translateY(-50%);
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+    width: 50vw;
+    padding: 10px;
+    background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    height: 38vh;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+.result{width: 100vw;height: 100vh;position: absolute;left: 0;top: 0; pointer-events: none}
+.result>div{
+    width: 30vw;
+    position: absolute;
+    cursor: pointer;
+}
+.activate{
+	opacity: 1
+}
+</style>
+</head>
+<body>
+
+<button class="open-button" onclick="openForm()">한밤중에 당신의 머릿속을 맴도는 것들은 무엇인가요?</button>
+
+	<div class="result">
+	  	<div class="single_answer">
+	  		제 머릿속을 맴도는 키워드는 “ 내일 ” , “ 달 ”입니다.
+			“ 내일 ” 이 맴도는 이유는 이 밤이 지나면 내일이 올 것 이고 오늘보다 
+			더 나은 내일을 원하기 때문입니다 . 날마다 노력하면 분명히 이뤄지는 일이 있을것이고
+			어제보다 더 나은 제가 될것입니다 .
+			“ 달 ” 이란 키워드는 이 한밤중에 떠있는 달이 보람차게 보낸 오늘의 하루를
+			비춰주는 것 같아 매일 한밤중 제 머릿속을 맴돕니다 .
+	  	</div>
+	  	<div class="single_answer">
+	  		내가 인간에 대해 가지고 있는 생각, 가끔은 게임?, 여행, 먹고 싶은거
+	  	</div>
+	  	<div class="single_answer">
+	  		사실대로 꺼내보자면 그동안 저의 과거들이 아직은 저를 자주 괴롭히는 편 입니다. 하지만 언젠가는 나의 이야기를 예술로 풀어낼 수 있다는 믿음을 밤마다 되새기는 편 입니다.
+	  	</div>
+	  	<div class="single_answer">
+	  		내 진짜 기억일까 꿈일까?
+			왜 나는 꿈을 기억하지 못할까?
+			내일에 대한 걱정
+			잠들지 못하는 괴로움
+			미래에 대한 막연한 들뜸
+			파란빛이 도는 캄캄한 밤 속에서 쏟아지듯이 흔들리는 진한 청록색의 나뭇잎들
+	  	</div>
+	  	<div class="single_answer">
+	  		매일 매일 다르지만 항상 오늘 하루가 어땠고 어떤 일이 가장 나에게 인상 깊었고 가장 기억하고 싶었던 일, 가장 속상했던 일이 무엇이었는지 생각하는 것 같습니다. 예를 들면 오늘 학교에서는 선생님에 이런 말씀이 정말 좋았던 것 같다. 오늘 친구가 어떠해서 조금 속상하긴 했지만 어떠해서 정말 행복했던 하루 였다. 이런 것들을이 내 머릿속에 맴도는 것 같다.
+	  	</div>
+	  	<div class="single_answer">
+	  		‘지구 반대편에 있는 사람도 나와 같은 생각을 할까‘라는 생각이 요즘 들어 자꾸 떠오릅니다. 지구에 있는 수많은 사람들 중에 나와 같은 생각이나 행동을 하는 사람이 단 한명도 없을까? 나와 비슷한 생각을 하는 사람이랑은 말이 잘 통할까? 같은 생각이 자주 머릿속에 맴돌곤 합니다.
+	  	</div>
+	  	<div class="single_name">17세 송예환</div>
+	  	<div class="single_name">17세 송예환</div>
+	  	<div class="single_name">17세 송예환</div>
+	  	<div class="single_name">17세 송예환</div>
+	  	<div class="single_name">17세 송예환</div>
+	  	<div class="single_name">17세 송예환</div>
+	</div>
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+
+    <input type="text" placeholder="Enter Email" name="email" required>
+    <div>20자 이상 적어주세요</div>
+    <div class="submit btn">답변 제출하기</div>
+    <div class="submit_2 btn">이미 답 했습니다.</div>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+$('.submit').click(function(){
+	console.log($('input').val().length)
+	if($('input').val().length>19){
+		$('.result').append('<div>'+$('input').val()+'</div>')
+		$('.result>div').each(function(){
+		     $(this).css({"left": Math.random() * window.outerWidth * 0.7 , "top": Math.random() * window.outerHeight * 0.7});
+		});
+		setTimeout(function(){
+				move()
+		},500)
+
+	}else{
+		alert('더 길게 적어주세요')
+	}
+})
+$('.submit_2').click(function(){
+		alert('본인의 이름과 답을 골라주세요')
+		closeForm()
+		$('.open-button').hide()
+		$('.result').css({'pointer-events':'auto'})
+		var name_click = false
+		var answer_click = false
+
+		$('.single_name').click(function(){
+			name_click = true
+			$(this).css({'color':'red'})
+			if(answer_click){
+				move()
+			}
+		})
+		$('.single_answer').click(function(){
+			answer_click = true
+			$(this).css({'color':'red'})
+			if(answer_click){
+				move()
+			}
+		})
+})
+function move(){
+	alert('이동합니다.')
+	setTimeout(function(){
+		window.location.replace("step2.html");
+	},500)
+}
+$(document).ready(function(){
+		$('.result>div').each(function(){
+		     $(this).css({"left": Math.random() * window.outerWidth * 0.7 , "top": Math.random() * window.outerHeight * 0.7});
+		});
+		setTimeout(function(){
+			$('.open-button').addClass('activate')
+		},500)
+})
+</script>
+
+</body>
+</html>

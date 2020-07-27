@@ -1,0 +1,575 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+	<link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+<style>
+@font-face {
+  font-family: BananaGrotesk_Bold;
+  src: url(Webfonts/BananaGrotesk-Bold.woff2);
+}
+@font-face {
+  font-family: BananaGrotesk_Extrabold;
+  src: url(Webfonts/BananaGrotesk-Extrabold.woff2);
+}
+@font-face {
+  font-family: BananaGrotesk_Extralight;
+  src: url(Webfonts/BananaGrotesk-Extralight.woff2);
+}
+@font-face {
+  font-family: BananaGrotesk_Light;
+  src: url(Webfonts/BananaGrotesk-Light.woff2);
+}
+@font-face {
+  font-family: BananaGrotesk_Medium;
+  src: url(Webfonts/BananaGrotesk-Medium.woff2);
+}
+@font-face {
+  font-family: BananaGrotesk_Regular;
+  src: url(Webfonts/BananaGrotesk-Regular.woff2);
+}
+@font-face {
+  font-family: BananaGrotesk_Semibold;
+  src: url(Webfonts/BananaGrotesk-Semibold.woff2);
+}
+@font-face {
+  font-family: BananaGrotesk_Thin;
+  src: url(Webfonts/BananaGrotesk-Thin.woff2);
+}
+
+html {
+	font-family: 'BananaGrotesk-Regular', serif;
+	background: linear-gradient(#ffc729 60vh,#ffc729 60.05vh) fixed;
+	width:100vh;
+}
+body{
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+.bold{ font-family: 'BananaGrotesk_Bold', serif; }
+.extrabold{ font-family: 'BananaGrotesk-Extrabold', serif;}
+.extralight{ font-family: 'BananaGrotesk-Extralight', serif;}
+.light{ font-family: 'BananaGrotesk-Light', serif;}
+.medium{ font-family: 'BananaGrotesk-Medium', serif;}
+.regular{ font-family: 'BananaGrotesk-Regular', serif;}
+.semibold{ font-family: 'BananaGrotesk-Semibold', serif;}
+.thin{ font-family: 'BananaGrotesk-Thin', serif;}
+
+.s_5{
+	font-size:5vh;
+	line-height: 5vh 
+}
+.s_4{
+	font-size:4.5vh;
+	line-height: 4.5vh 
+}
+.s_3{
+	font-size:4vh;
+	line-height: 4vh 
+}
+.s_2{
+	font-size:3.5vh;
+	line-height: 3.5vh 
+}
+.s_1{
+	font-size:3vh;
+	line-height: 3vh 
+}
+.s_0{
+	font-size:2.5vh;
+	line-height: 2.5vh 
+}
+text {
+	font-size: 4.5vh;
+}
+path {
+	fill: none;
+}
+#letters {
+    font-size: 1.4vh;
+    line-height: 1.5vh;
+
+    position: absolute;
+    width: calc(100vw - 32.5vh);
+    height: 2.5vh;
+    right: 2.5vh;
+    top: 0vh;
+
+    padding: 0.8vh;
+    background-color:  #ffe08a;
+    border:none;
+
+    z-index: 1000
+}
+.select_wrap{
+    overflow-y: auto;
+
+	height: 40vh;
+	bottom: 0vh;
+	position:absolute;
+    background-color:  #000000;
+}
+.select{
+	color: #ffc729;
+	display: inline-block;
+}
+svg{
+	position:absolute;
+	left: 0;
+	top: 2.5vh;
+	margin:0;
+	padding: 0;
+}
+.dropdown {
+	position: absolute;
+	display: inline-block;
+	top: 0vh;
+	height: 2.5vh;
+	min-width: 15vh;
+	background-color: #ffe08a;
+}
+.dropdown_1{
+	left: 15vh
+}
+.dropdown_2>span{
+	padding-left: 0.8vh;
+}
+.dropdown>span{
+	font-size: 1.4vh;
+	line-height: 2.5vh;
+
+	width: 100%;
+	display: block;
+}
+.select>span{
+    width: 100%;
+    display: block;
+    color: black
+}
+.select>span:hover{
+	background-color: #ffe08a;
+	cursor: pointer;
+}
+span:hover{
+	cursor: pointer;
+}
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 15vh;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown_1:hover .dropdown-content_1 {
+	display: block;
+}
+.dropdown_2:hover .dropdown-content_2 {
+	display: block;
+}
+.reset{
+	position: absolute;
+	right: 0;
+	z-index: 10000;
+	top: 0;
+	height: 2.5vh;
+	width: 2.5vh;
+	background-color: #ffe08a;
+	background-image: url('reset.svg');
+	background-size: 60% 60%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.reset:hover{
+	cursor: pointer
+}
+.select_2 span{
+	font-size:4vh;
+	line-height: 4vh 
+}
+
+@media screen and (max-height: 900px) {
+	.s_5{
+		font-size:45px;
+		line-height: 45px 
+	}
+	.s_4{
+		font-size:40.5px;
+		line-height: 40.5px
+	}
+	.s_3{
+		font-size:36px;
+		line-height: 36px
+	}
+	.s_2{
+		font-size:31.5px;
+		line-height: 31.5px;
+	}
+	.s_1{
+		font-size:27px;
+		line-height: 27px
+	}
+	.s_0{
+		font-size:22.5px;
+		line-height: 22.5px 
+	}
+	text {
+		font-size: 40.5px;
+	}
+	#letters {
+	    font-size: 12.6px;
+	    line-height: 13.5px;
+	    width: calc(100vw - 292.5px);
+	    height: 22.5px;
+	    right: 22.5px;
+	    top: 0vh;
+	    padding: 7.2px;
+	}
+	.select_wrap{
+		height: 360px;
+		bottom: 0vh;
+	}
+	svg{
+		top: 22.5px;
+	}
+	.dropdown {
+		height: 22.5px;
+		min-width: 135px;
+	}
+	.dropdown_1{
+		left: 135px
+	}
+	.dropdown_2>span{
+		padding-left: 7.2px
+	}
+	.dropdown>span{
+		font-size: 12.6px;
+		line-height: 22.5px;
+	}
+	span:hover{
+		cursor: pointer;
+	}
+	.dropdown-content {
+		min-width: 135px;
+	}
+	.reset{
+		height: 22.5px;
+		width: 22.5px;
+	}
+	.select_2 span{
+		font-size:36px;
+		line-height: 36px 
+	}
+}
+
+</style>
+</head>
+<body>
+
+
+
+
+<input type="text" id="letters" value="Banananananananananannanananananananananananananananannanananananananananananananannanananananananananananananananannanananananananananananananannanananananananananananananananannanananananananananananananannanananananananananananananananannanananana">
+<div class="reset"></div>
+<div class="dropdown dropdown_1">
+  <span>Change Size?</span>
+  <div class="dropdown-content dropdown-content_1">
+	<div class="select_1 select">
+		<span class="s_5 regular">Banana</span>
+		<span class="s_4 regular">Banana</span>
+		<span class="s_3 regular">Banana</span>
+		<span class="s_2 regular">Banana</span>
+		<span class="s_1 regular">Banana</span>
+		<span class="s_0 regular">Banana</span>
+	</div>
+  </div>
+</div>
+<div class="dropdown dropdown_2">
+  <span>Change Weight?</span>
+  <div class="dropdown-content dropdown-content_2">
+	<div class="select_2 select">
+		<span class="extrabold">BananaGrotesk</span>
+		<span class="bold">BananaGrotesk</span>
+		<span class="semibold">BananaGrotesk</span>
+		<span class="medium">BananaGrotesk</span>
+		<span class="regular">BananaGrotesk</span>
+		<span class="light">BananaGrotesk</span>
+		<span class="extralight">BananaGrotesk</span>
+		<span class="thin">BananaGrotesk</span>
+	</div>
+  </div>
+</div>
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+var isMobile = false; //initiate as false
+// device detection
+if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
+    || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0,4))) { 
+    isMobile = true;
+}
+
+var width = window.innerWidth,
+		height = window.innerHeight;
+
+var line = d3.line()
+	.curve(d3.curveBasis);
+
+
+		function defining(){
+		var New_fontfamily_array = [
+				'BananaGrotesk_Bold',
+				'BananaGrotesk_Extrabold',
+				'BananaGrotesk_Extralight',
+				'BananaGrotesk_Light',
+				'BananaGrotesk_Medium',
+				'BananaGrotesk_Regular',
+				'BananaGrotesk_Semibold',
+				'BananaGrotesk_Thin'
+				]
+		var New_fontsize_array = [
+				'8vh',
+				'7vh',
+				'6vh',
+				'5vh',
+				'4vh',
+				'3vh'
+				]
+		var New_fontfamily_random = Math.floor(Math.random() * 7) 
+		var New_fontsize_random = Math.floor(Math.random() * 5) 
+
+		  		$('textPath').css({'fontFamily': New_fontfamily_array[New_fontfamily_random]});
+		    	$("textPath").css({'fontSize':New_fontsize_array[New_fontsize_random]});
+		    	$("textPath").css({'lineHeight':New_fontsize_array[New_fontsize_random]});
+		    	}
+
+function putCursorAtEnd(){
+  return $( "input" ).each(function() {
+    var $el = $(this),
+        el = this;
+    if (!$el.is(":focus")) {
+     $el.focus();
+    }
+    if (el.setSelectionRange) {
+      var len = $el.val().length * 2;
+      setTimeout(function() {
+        el.setSelectionRange(len, 0);
+      }, 1);
+    } else {
+      $el.val($el.val());
+    }
+    this.scrollTop = 999999;
+
+  });
+
+};
+
+
+
+
+$( "body" ).click(function() {
+	if(!isMobile){
+	  $( "input" ).focus();
+	  putCursorAtEnd();
+	}
+});
+$( "#letters" ).click(function() {
+	console.log('clicked')
+	if(!isMobile){
+	input.node().value = ''
+	}
+});
+$( ".reset" ).click(function() {
+	console.log('clicked')
+	if(!isMobile){
+	input.node().value = ''
+	changeLetters()
+	}
+});
+
+
+$('.dropdown-content').hover(
+  function() {
+    $( 'svg' ).css({'pointerEvents':'none'});
+  }, function() {
+    $( 'svg' ).css({'pointerEvents':'auto'});
+  }
+);
+$('.dropdown').hover(
+  function() {
+    $( 'svg' ).css({'pointerEvents':'none'});
+  }, function() {
+    $( 'svg' ).css({'pointerEvents':'auto'});
+  }
+);
+var input = d3.select("input")
+	.on("input", changeLetters);
+var letters = input.node().value;
+
+var startingPath = getStartingPath();
+if(!isMobile){
+var svg = d3.select("body").append("svg")
+	.attr("width", width)
+	.attr("height", height*19.5/20)
+	.call(d3.drag()
+		.container(function(d) { return this; })
+		.subject(function(d) { var p = [d3.event.x, d3.event.y]; return [p, p]; })
+		.on("start", dragStarted)
+		.on('end', dragended));
+}else{
+var svg = d3.select("body").append("svg")
+	.attr("width", width)
+	.attr("height", height)
+	.call(d3.drag()
+		.container(function(d) { return this; })
+		.subject(function(d) { var p = [d3.event.x, d3.event.y]; return [p, p]; })
+		.on("start", dragStarted)
+		.on('end', dragended));
+}
+
+var textPath = svg.append("defs").append("path")
+	.attr("id", "textPath")
+	.attr("d", startingPath);
+
+var path = svg.append("path")
+	.attr("d", startingPath);
+
+var text = svg.append("text").append("textPath")
+	.attr("xlink:href", "#textPath")
+	.text(letters);
+
+function changeLetters() {
+	letters = input.node().value;
+	text.text(letters);
+}
+// document.onkeypress=function(e){
+// 	    changeLetters()
+//     //do the required work
+// }
+var New_fontsize
+var New_fontfamily
+function dragended(){
+	// $('#letters').animate({'opacity':'0'})
+			console.log('df')
+			if(!isMobile){
+						  $( "input" ).focus();
+						  putCursorAtEnd();
+						}
+}
+function dragStarted() {
+	if(isMobile){
+		 defining();
+	}
+
+	$('#letters').animate({'opacity':'1'})
+
+	var d = d3.event.subject,
+			x0 = d3.event.x,
+			y0 = d3.event.y;
+	
+	path.datum(d);
+	textPath.datum(d);
+	// text.text('Banananananananananannanananananananananananananananannanananananananananananananannanananananananananananananananannanananananananananananananannanananananananananananananananannanananananananananananananannanananananananananananananananannanananana');
+	// input.node().value = 'Banananananananananannanananananananananananananananannanananananananananananananannanananananananananananananananannanananananananananananananannanananananananananananananananannanananananananananananananannanananananananananananananananannanananana'
+
+	d3.event.on("drag", function() {
+		var x1 = d3.event.x,
+				y1 = d3.event.y,
+				dx = x1 - x0,
+				dy = y1 - y0;
+		
+		if (dx * dx + dy * dy > 100) d.push([x0 = x1, y0 = y1]);
+		else d[d.length - 1] = [x1, y1];
+		textPath.attr("d", line);
+		path.attr("d", line);
+	});
+}
+
+
+function getStartingPath() {
+	return "M83,265L84,263.6666666666667C85,262.3333333333333,87,259.6666666666667,88.83333333333333,257.1666666666667C90.66666666666667,254.66666666666666,92.33333333333333,252.33333333333334,94.5,249.66666666666666C96.66666666666667,247,99.33333333333333,244,101.83333333333333,241C104.33333333333333,238,106.66666666666667,235,109.16666666666667,232.33333333333334C111.66666666666667,229.66666666666666,114.33333333333333,227.33333333333334,117.33333333333333,225.16666666666666C120.33333333333333,223,123.66666666666667,221,126.83333333333333,219.16666666666666C130,217.33333333333334,133,215.66666666666666,136,214C139,212.33333333333334,142,210.66666666666666,145.16666666666666,209.16666666666666C148.33333333333334,207.66666666666666,151.66666666666666,206.33333333333334,154.83333333333334,205.16666666666666C158,204,161,203,164.33333333333334,202.5C167.66666666666666,202,171.33333333333334,202,175.16666666666666,202C179,202,183,202,187,202C191,202,195,202,198.66666666666666,202.66666666666666C202.33333333333334,203.33333333333334,205.66666666666666,204.66666666666666,209,206.16666666666666C212.33333333333334,207.66666666666666,215.66666666666666,209.33333333333334,218.83333333333334,210.83333333333334C222,212.33333333333334,225,213.66666666666666,228,215.33333333333334C231,217,234,219,237.16666666666666,220.83333333333334C240.33333333333334,222.66666666666666,243.66666666666666,224.33333333333334,246.83333333333334,226.33333333333334C250,228.33333333333334,253,230.66666666666666,255.83333333333334,232.83333333333334C258.6666666666667,235,261.3333333333333,237,264.1666666666667,239.33333333333334C267,241.66666666666666,270,244.33333333333334,273,246.66666666666666C276,249,279,251,282,253C285,255,288,257,291,258.8333333333333C294,260.6666666666667,297,262.3333333333333,300.1666666666667,264C303.3333333333333,265.6666666666667,306.6666666666667,267.3333333333333,310.1666666666667,269C313.6666666666667,270.6666666666667,317.3333333333333,272.3333333333333,321.1666666666667,273.8333333333333C325,275.3333333333333,329,276.6666666666667,332.6666666666667,277.5C336.3333333333333,278.3333333333333,339.6666666666667,278.6666666666667,343.1666666666667,278.8333333333333C346.6666666666667,279,350.3333333333333,279,354.1666666666667,279C358,279,362,279,365.6666666666667,279C369.3333333333333,279,372.6666666666667,279,376,278.6666666666667C379.3333333333333,278.3333333333333,382.6666666666667,277.6666666666667,386,276.8333333333333C389.3333333333333,276,392.6666666666667,275,396.1666666666667,274C399.6666666666667,273,403.3333333333333,272,406.6666666666667,271C410,270,413,269,416.3333333333333,267.8333333333333C419.6666666666667,266.6666666666667,423.3333333333333,265.3333333333333,426.6666666666667,263.6666666666667C430,262,433,260,436.3333333333333,258.1666666666667C439.6666666666667,256.3333333333333,443.3333333333333,254.66666666666666,446.8333333333333,253C450.3333333333333,251.33333333333334,453.6666666666667,249.66666666666666,457.1666666666667,248C460.6666666666667,246.33333333333334,464.3333333333333,244.66666666666666,467.8333333333333,243C471.3333333333333,241.33333333333334,474.6666666666667,239.66666666666666,477.6666666666667,238.33333333333334C480.6666666666667,237,483.3333333333333,236,486.6666666666667,234.83333333333334C490,233.66666666666666,494,232.33333333333334,497.6666666666667,231.5C501.3333333333333,230.66666666666666,504.6666666666667,230.33333333333334,508,229.83333333333334C511.3333333333333,229.33333333333334,514.6666666666666,228.66666666666666,517.6666666666666,228.16666666666666C520.6666666666666,227.66666666666666,523.3333333333334,227.33333333333334,526.8333333333334,227C530.3333333333334,226.66666666666666,534.6666666666666,226.33333333333334,538.8333333333334,226.16666666666666C543,226,547,226,550.8333333333334,226.16666666666666C554.6666666666666,226.33333333333334,558.3333333333334,226.66666666666666,561.8333333333334,227.66666666666666C565.3333333333334,228.66666666666666,568.6666666666666,230.33333333333334,571.8333333333334,231.83333333333334C575,233.33333333333334,578,234.66666666666666,581,236.5C584,238.33333333333334,587,240.66666666666666,590,242.83333333333334C593,245,596,247,599,249C602,251,605,253,608,255.16666666666666C611,257.3333333333333,614,259.6666666666667,616.8333333333334,262C619.6666666666666,264.3333333333333,622.3333333333334,266.6666666666667,625.1666666666666,268.8333333333333C628,271,631,273,634.3333333333334,274.8333333333333C637.6666666666666,276.6666666666667,641.3333333333334,278.3333333333333,644.8333333333334,279.8333333333333C648.3333333333334,281.3333333333333,651.6666666666666,282.6666666666667,655,283.5C658.3333333333334,284.3333333333333,661.6666666666666,284.6666666666667,665.1666666666666,285C668.6666666666666,285.3333333333333,672.3333333333334,285.6666666666667,676,285.8333333333333C679.6666666666666,286,683.3333333333334,286,687,286C690.6666666666666,286,694.3333333333334,286,698,286.1666666666667C701.6666666666666,286.3333333333333,705.3333333333334,286.6666666666667,707.5,286.8333333333333C709.6666666666666,287,710.3333333333334,287,710.6666666666666,287L711,287";
+}
+
+
+
+
+
+
+
+$('span').on('click', function() {
+	if ( $(this).hasClass("bold")) {
+	    $("textPath").css({'fontFamily':'BananaGrotesk_Bold'});
+  	} else if ( $(this).hasClass("extrabold")) {
+	    $("textPath").css({'fontFamily':'BananaGrotesk_Extrabold'});
+	} else if ( $(this).hasClass("extralight")) {
+	    $("textPath").css({'fontFamily':'BananaGrotesk_Extralight'});
+	} else if ( $(this).hasClass("light")) {
+	    $("textPath").css({'fontFamily':'BananaGrotesk_Light'});
+	} else if ( $(this).hasClass("medium")) {
+	    $("textPath").css({'fontFamily':'BananaGrotesk_Medium'});
+	} else if ( $(this).hasClass("regular")) {
+	    $("textPath").css({'fontFamily':'BananaGrotesk_Regular'});
+	} else if ( $(this).hasClass("semibold")) {
+	    $("textPath").css({'fontFamily':'BananaGrotesk_Semibold'});
+	} else if ( $(this).hasClass("thin")) {
+	    $("textPath").css({'fontFamily':'BananaGrotesk_Thin'});
+	}
+
+
+
+	if ( $(this).hasClass("s_5")) {
+    	$("textPath").css({'fontSize':'6vh'});
+    	$("textPath").css({'lineHeight':'6vh'});
+  	} else if ( $(this).hasClass("s_4")) {
+    	$("textPath").css({'fontSize':'5.3vh'});
+    	$("textPath").css({'lineHeight':'5.3vh'});
+	} else if ( $(this).hasClass("s_3")) {
+    	$("textPath").css({'fontSize':'4.6vh'});
+    	$("textPath").css({'lineHeight':'4.6vh'});
+	} else if ( $(this).hasClass("s_2")) {
+    	$("textPath").css({'fontSize':'3.9vh'});
+    	$("textPath").css({'lineHeight':'3.9vh'});
+	} else if ( $(this).hasClass("s_1")) {
+    	$("textPath").css({'fontSize':'3.2vh'});
+    	$("textPath").css({'lineHeight':'3.2vh'});
+	} else if ( $(this).hasClass("s_0")) {
+    	$("textPath").css({'fontSize':'2.5vh'});
+    	$("textPath").css({'lineHeight':'2.5vh'});
+	} 
+});
+
+
+if(isMobile){
+		defining();
+		$( "svg" ).click(function() {
+			console.log('ha!')
+		 defining();
+		});
+		$('.dropdown').hide()
+		$('.select').hide()
+		$('#letters').hide()
+
+
+
+
+		$('html').css({'background': 'linear-gradient(#ffc729 60vh, #ffc729 60.05vh)'})
+}
+
+
+
+
+</script>
+</body>
+</html>

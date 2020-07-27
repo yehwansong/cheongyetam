@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<style>
+  .back{
+    position: fixed;
+    right: 2.5vh;
+    top: 2.5vh;
+    font-size: 5vh;
+    background-color: black;
+    color: white;
+    padding: 0.5vh;
+    border-radius: 3vh;
+    cursor: pointer;
+  }
+  body{
+    background-color: purple
+  }
+</style>
+</head>
+<body>
+<a href = "step2.html" class="back">되돌아가기</a>
+<div>
+*****여기에 들어올 수 있는 포멧은 : 비디오 / 오디오 / 텍스트 / 이미지 입니다.<br>
+아직 워크숍이 마무리되지 않아 포멧이 결정되지는 않았습니다.
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+$('.submit').click(function(){
+	console.log($('input').val().length)
+	if($('input').val().length>19){
+		$('.result').append('<div>'+$('input').val()+'</div>')
+		$('.result>div').each(function(){
+		     $(this).css({"left": Math.random() * window.outerWidth * 0.7 , "top": Math.random() * window.outerHeight * 0.7});
+		});
+	}else{
+		alert('더 길게 적어주세요')
+	}
+})
+$(document).ready(function(){
+		$('.result>div').each(function(){
+		     $(this).css({"left": Math.random() * window.outerWidth * 0.7 , "top": Math.random() * window.outerHeight * 0.7});
+		});
+		setTimeout(function(){
+			$('.open-button').addClass('activate')
+		},500)
+})
+</script>
+
+</body>
+</html>
