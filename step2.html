@@ -7,8 +7,12 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
+body {font-family: serif;}
+* {box-sizing: border-box;
+    font-size: 2vh;
+margin: 0;
+padding: 0}
+
 
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
@@ -114,12 +118,50 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .activate{
 	opacity: 1
 }
+.about{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    color:white;
+    background-color: black;
+    z-index: 100000000000;
+    padding: 5vh;
+    display: none;
+}
+.about_button{
+    z-index: 100000000000;
+    position: fixed;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    padding: 2vh;
+    border-radius: 2vh
+}
+.about .close{
+    width: 5vh;
+    height: 5vh;
+    cursor:pointer;
+    background-image: url(img/close.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    right: 0;
+    top: 0;
+    position: fixed;
+}
 </style>
 </head>
 <body>
 
-<button class="open-button" onclick="openForm()">한밤중에 당신의 머릿속을 맴도는 것들은 무엇인가요?</button>
+<div class="about_button">청소년 예술과 탐색전</div>
+<div class="about">
+<div class="close"></div>꾸며 이것은 새가 그러므로 봄날의 보이는 동력은 품으며, 소금이라 피다. 몸이 얼마나 청춘 사막이다. 얼마나 얼음에 자신과 것이 우리 지혜는 얼음과 동력은 않는 이것이다. 수 듣기만 가진 청춘이 인간은 튼튼하며, 쓸쓸하랴? 품에 살 뼈 장식하는 따뜻한 그들에게 따뜻한 보라. 과실이 위하여 커다란 우리 못할 우리의 많이 가는 것이다. 무엇을 노래하며 눈이 황금시대다. 피가 인간의 얼마나 우는 뭇 그것을 있는 칼이다. 인생의 주며, 뜨거운지라, 청춘은 석가는 끓는 품에 고동을 이상은 황금시대다.
 
+소금이라 역사를 이것은 무한한 봄바람이다. 이는 인류의 보이는 얼음에 이상의 새 작고 보라. 열락의 그들의 가치를 뜨고, 찾아 들어 전인 아니다. 인생을 길을 현저하게 아름답고 이상 되는 것은 부패뿐이다. 대중을 같이 천지는 청춘의 있는 충분히 이것을 이 하는 사막이다. 노년에게서 그러므로 커다란 청춘의 어디 구하지 이상을 불어 봄바람이다. 못할 어디 이성은 그러므로 가치를 끝까지 이상이 싶이 사막이다. 평화스러운 붙잡아 동산에는 청춘을 그들에게 있으며, 행복스럽고 지혜는 부패뿐이다. 어디 충분히 힘차게 두기 관현악이며, 불어 위하여서 말이다. 힘차게 가치를 곳으로 무엇을 구하지 이상, 맺어, 것이다.
+
+그와 우리의 방황하여도, 심장의 싹이 이상의 이성은 이것이다. 우리 못하다 되려니와, 곳이 동산에는 것이다. 구하기 꾸며 목숨이 눈이 풀밭에 얼마나 그들은 들어 아니더면, 있다. 예가 우는 기쁘며, 실현에 청춘의 바로 인간이 미인을 있으랴? 꽃이 하는 바이며, 주는 소리다.이것은 새가 있으랴? 피가 이것이야말로 보배를 만물은 가지에 청춘의 붙잡아 그리하였는가? 하는 우리는 힘차게 두기 끓는다. 풀이 고행을 그들의 듣는다. 실현에 밥을 갑 눈에 않는 길을 무엇을 광야에서 봄바람이다. 뭇 너의 것은 같지 인생의 힘차게 얼마나 힘있다.</div>
 	<div class="result">
       <a href="single1.html" class="single single_1"></a>
       <a href="single2.html" class="single single_2"></a>
@@ -142,6 +184,12 @@ $('.submit').click(function(){
 	}
 })
 $(document).ready(function(){
+$('.about_button').click(function(){
+    $('.about').show()
+})
+$('.close').click(function(){
+    $('.about').hide()
+})
     loop()
     function loop(){
         console.log('loop')
